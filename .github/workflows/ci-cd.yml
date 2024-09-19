@@ -26,6 +26,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Lint code
+      run: |
+        pip install flake8
+        flake8 src tests
+
     - name: Run tests
       run: |
         python -m pytest
@@ -34,7 +39,5 @@ jobs:
       run: |
         echo "Deploying application..."
         # Add your deployment commands here
-        # For example, you might use `scp` to copy files to a server,
-        # or use a deployment tool like Heroku, AWS, etc.
-        # Example:
+        # Example for deploying to a server
         # scp -r ./src user@server:/path/to/deploy
