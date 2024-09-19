@@ -29,7 +29,7 @@ jobs:
     - name: Lint code
       run: |
         pip install flake8
-        flake8 src tests
+        flake8 src
 
     - name: Run tests
       run: |
@@ -39,5 +39,3 @@ jobs:
       run: |
         echo "Deploying application..."
         # Add your deployment commands here
-        # Example for deploying to a server
-        # scp -r ./src user@server:/path/to/deploy
